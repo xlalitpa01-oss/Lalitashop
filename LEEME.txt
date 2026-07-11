@@ -1,0 +1,18 @@
+PASOS PARA PUBLICAR GRATIS EN GITHUB PAGES
+
+1. Crea una cuenta en https://github.com
+2. Crea un repositorio nuevo llamado: lalashop
+3. Déjalo como Public.
+4. Sube index.html y la carpeta assets.
+5. Entra a Settings > Pages.
+6. En Source selecciona Deploy from a branch.
+7. Elige main y /root; después pulsa Save.
+8. Espera unos minutos.
+
+Tu enlace quedará así:
+https://TU-USUARIO.github.io/lalashop/
+
+IMPORTANTE:
+Esta versión tiene catálogo, carrito y pedidos por WhatsApp.
+No incluye panel administrativo ni base de datos, porque GitHub Pages no ejecuta PHP.
+El WhatsApp configurado es 52285102477. Revisa que tenga todos los dígitos correctos.

@@ -1,0 +1,288 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LALA SHOP</title><link rel="icon" href="assets/logo.png"><style>
+:root{--pink:#ff8fc4;--lime:#d7ff79;--ink:#4b2140;--shadow:0 12px 30px #7a245522}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(#fff7fb,#f6ffe8);color:var(--ink)}.wrap{width:min(1180px,92%);margin:auto}
+.top{background:var(--ink);color:white;text-align:center;padding:8px}header{position:sticky;top:0;background:#fffffff2;z-index:10;border-bottom:1px solid #f2c9dc}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:10px 0}.brand{display:flex;align-items:center;gap:10px;font-weight:900}.brand img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:3px solid var(--lime)}
+button,.btn{border:0;border-radius:999px;padding:12px 16px;font-weight:800;cursor:pointer}.primary,.product button{background:linear-gradient(135deg,var(--pink),#ff5fac);color:white}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:24px;align-items:center;padding:35px 0}.hero-card{background:linear-gradient(135deg,#ffacd3,#ffe8f2 55%,#dfff9f);padding:30px;border-radius:30px;box-shadow:var(--shadow)}.hero h1{font-size:clamp(48px,8vw,86px);line-height:.9;margin:0 0 16px}.hero img{width:100%;border-radius:28px;box-shadow:var(--shadow)}
+.search{width:100%;padding:15px;border-radius:999px;border:1px solid #efbfd5;font-size:16px}.filters{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin:16px 0}.filter{background:white;border:1px solid #efbfd5}.filter.active{background:var(--ink);color:white}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:15px}.product{background:white;border:1px solid #f2d4e2;border-radius:22px;padding:14px;display:flex;flex-direction:column;min-height:300px;box-shadow:var(--shadow)}.art{height:110px;border-radius:18px;background:linear-gradient(135deg,#ffddec,#eaffbc);display:grid;place-items:center;font-size:54px}.product span{margin-top:10px;font-size:12px;font-weight:800}.product h3{margin:8px 0 4px}.product p{margin:0;color:#7b5b72}.product strong{font-size:26px;margin:10px 0}.product small{min-height:34px;color:#8b7786}.product button{margin-top:auto}
+.cart-fab{position:fixed;right:18px;bottom:18px;background:var(--lime);z-index:20;box-shadow:0 10px 25px #0003}.drawer{position:fixed;inset:0;background:#21081877;display:none;z-index:30}.drawer.open{display:block}.panel{margin-left:auto;width:min(470px,100%);height:100%;background:white;padding:18px;overflow:auto}.head{display:flex;justify-content:space-between;align-items:center}.item{display:grid;grid-template-columns:1fr auto;gap:8px;padding:12px 0;border-bottom:1px solid #eed7e3}.qty{display:flex;gap:6px;align-items:center}.qty button{width:32px;height:32px;padding:0;border:1px solid #e2bfd0;background:white}.field input{width:100%;padding:12px;border:1px solid #dfbfd0;border-radius:12px}.total{display:flex;justify-content:space-between;font-size:22px;font-weight:900;margin:16px 0}footer{margin-top:45px;background:var(--ink);color:white;text-align:center;padding:24px}
+@media(max-width:800px){.hero{grid-template-columns:1fr}.brand span{display:none}}
+</style></head><body>
+<div class="top">💗 Pedidos por WhatsApp · LALA SHOP 💚</div><header><div class="wrap nav"><div class="brand"><img src="assets/logo.png"><span>LALA SHOP</span></div><button class="primary" onclick="openCart()">🛍️ <span id="countTop">0</span></button></div></header>
+<main class="wrap"><section class="hero"><div class="hero-card"><h1>LALA<br>SHOP</h1><p>Streaming, diamantes para Free Fire, Robux, maxeo de armas, apps y más.</p><a href="#catalogo" class="btn primary">Ver catálogo</a></div><img src="assets/logo.png"></section>
+<section id="catalogo"><h2 style="text-align:center">🩰 Stock disponible</h2><input id="search" class="search" placeholder="Buscar producto..."><div class="filters"><button class="filter active" data-category="Todos">Todos</button><button class="filter" data-category="Apps Android">Apps Android</button><button class="filter" data-category="Diseño y productividad">Diseño y productividad</button><button class="filter" data-category="Free Fire">Free Fire</button><button class="filter" data-category="Juegos">Juegos</button><button class="filter" data-category="Robux">Robux</button><button class="filter" data-category="Streaming">Streaming</button></div><div class="grid"><article class="product" data-category="Free Fire" data-search="diamantes una vez por id 110 diamantes free fire">
+<div class="art">💎</div><span>Free Fire</span><h3>Diamantes una vez por ID</h3>
+<p>110 diamantes</p><strong>$15</strong><small>Compra disponible una sola vez por ID.</small>
+<button onclick='addToCart({"id": 1, "name": "Diamantes una vez por ID", "variant": "110 diamantes", "price": 15})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes una vez por id 340 diamantes free fire">
+<div class="art">💎</div><span>Free Fire</span><h3>Diamantes una vez por ID</h3>
+<p>340 diamantes</p><strong>$55</strong><small>Compra disponible una sola vez por ID.</small>
+<button onclick='addToCart({"id": 2, "name": "Diamantes una vez por ID", "variant": "340 diamantes", "price": 55})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes una vez por id 570 diamantes free fire">
+<div class="art">💎</div><span>Free Fire</span><h3>Diamantes una vez por ID</h3>
+<p>570 diamantes</p><strong>$75</strong><small>Compra disponible una sola vez por ID.</small>
+<button onclick='addToCart({"id": 3, "name": "Diamantes una vez por ID", "variant": "570 diamantes", "price": 75})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes una vez por id 1,160 diamantes free fire">
+<div class="art">💎</div><span>Free Fire</span><h3>Diamantes una vez por ID</h3>
+<p>1,160 diamantes</p><strong>$130</strong><small>Compra disponible una sola vez por ID.</small>
+<button onclick='addToCart({"id": 4, "name": "Diamantes una vez por ID", "variant": "1,160 diamantes", "price": 130})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes una vez por id 2,398 diamantes free fire">
+<div class="art">💎</div><span>Free Fire</span><h3>Diamantes una vez por ID</h3>
+<p>2,398 diamantes</p><strong>$280</strong><small>Compra disponible una sola vez por ID.</small>
+<button onclick='addToCart({"id": 5, "name": "Diamantes una vez por ID", "variant": "2,398 diamantes", "price": 280})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes una vez por id 6,160 diamantes free fire">
+<div class="art">💎</div><span>Free Fire</span><h3>Diamantes una vez por ID</h3>
+<p>6,160 diamantes</p><strong>$580</strong><small>Compra disponible una sola vez por ID.</small>
+<button onclick='addToCart({"id": 6, "name": "Diamantes una vez por ID", "variant": "6,160 diamantes", "price": 580})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes ilimitados 110 diamantes free fire">
+<div class="art">💗</div><span>Free Fire</span><h3>Diamantes ilimitados</h3>
+<p>110 diamantes</p><strong>$18</strong><small></small>
+<button onclick='addToCart({"id": 7, "name": "Diamantes ilimitados", "variant": "110 diamantes", "price": 18})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes ilimitados 340 diamantes free fire">
+<div class="art">💗</div><span>Free Fire</span><h3>Diamantes ilimitados</h3>
+<p>340 diamantes</p><strong>$65</strong><small></small>
+<button onclick='addToCart({"id": 8, "name": "Diamantes ilimitados", "variant": "340 diamantes", "price": 65})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes ilimitados 570 diamantes free fire">
+<div class="art">💗</div><span>Free Fire</span><h3>Diamantes ilimitados</h3>
+<p>570 diamantes</p><strong>$90</strong><small></small>
+<button onclick='addToCart({"id": 9, "name": "Diamantes ilimitados", "variant": "570 diamantes", "price": 90})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes ilimitados 1,160 diamantes free fire">
+<div class="art">💗</div><span>Free Fire</span><h3>Diamantes ilimitados</h3>
+<p>1,160 diamantes</p><strong>$160</strong><small></small>
+<button onclick='addToCart({"id": 10, "name": "Diamantes ilimitados", "variant": "1,160 diamantes", "price": 160})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes ilimitados 2,398 diamantes free fire">
+<div class="art">💗</div><span>Free Fire</span><h3>Diamantes ilimitados</h3>
+<p>2,398 diamantes</p><strong>$320</strong><small></small>
+<button onclick='addToCart({"id": 11, "name": "Diamantes ilimitados", "variant": "2,398 diamantes", "price": 320})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes ilimitados 6,160 diamantes free fire">
+<div class="art">💗</div><span>Free Fire</span><h3>Diamantes ilimitados</h3>
+<p>6,160 diamantes</p><strong>$720</strong><small></small>
+<button onclick='addToCart({"id": 12, "name": "Diamantes ilimitados", "variant": "6,160 diamantes", "price": 720})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes ilimitados 12,320 diamantes free fire">
+<div class="art">💗</div><span>Free Fire</span><h3>Diamantes ilimitados</h3>
+<p>12,320 diamantes</p><strong>$1,420</strong><small></small>
+<button onclick='addToCart({"id": 13, "name": "Diamantes ilimitados", "variant": "12,320 diamantes", "price": 1420})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes ilimitados 18,480 diamantes free fire">
+<div class="art">💗</div><span>Free Fire</span><h3>Diamantes ilimitados</h3>
+<p>18,480 diamantes</p><strong>$2,130</strong><small></small>
+<button onclick='addToCart({"id": 14, "name": "Diamantes ilimitados", "variant": "18,480 diamantes", "price": 2130})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes ilimitados 24,640 diamantes free fire">
+<div class="art">💗</div><span>Free Fire</span><h3>Diamantes ilimitados</h3>
+<p>24,640 diamantes</p><strong>$2,840</strong><small></small>
+<button onclick='addToCart({"id": 15, "name": "Diamantes ilimitados", "variant": "24,640 diamantes", "price": 2840})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="diamantes ilimitados 30,800 diamantes free fire">
+<div class="art">💗</div><span>Free Fire</span><h3>Diamantes ilimitados</h3>
+<p>30,800 diamantes</p><strong>$3,550</strong><small></small>
+<button onclick='addToCart({"id": 16, "name": "Diamantes ilimitados", "variant": "30,800 diamantes", "price": 3550})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="maxeo de armas 1/2 al 7 free fire">
+<div class="art">🔫</div><span>Free Fire</span><h3>Maxeo de armas</h3>
+<p>1/2 al 7</p><strong>$1,300</strong><small>Sujeto a revisión y disponibilidad.</small>
+<button onclick='addToCart({"id": 17, "name": "Maxeo de armas", "variant": "1/2 al 7", "price": 1300})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="maxeo de armas 3 al 7 free fire">
+<div class="art">🔫</div><span>Free Fire</span><h3>Maxeo de armas</h3>
+<p>3 al 7</p><strong>$1,200</strong><small>Sujeto a revisión y disponibilidad.</small>
+<button onclick='addToCart({"id": 18, "name": "Maxeo de armas", "variant": "3 al 7", "price": 1200})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="maxeo de armas 4 al 7 free fire">
+<div class="art">🔫</div><span>Free Fire</span><h3>Maxeo de armas</h3>
+<p>4 al 7</p><strong>$1,100</strong><small>Sujeto a revisión y disponibilidad.</small>
+<button onclick='addToCart({"id": 19, "name": "Maxeo de armas", "variant": "4 al 7", "price": 1100})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="maxeo de armas 5 al 7 free fire">
+<div class="art">🔫</div><span>Free Fire</span><h3>Maxeo de armas</h3>
+<p>5 al 7</p><strong>$850</strong><small>Sujeto a revisión y disponibilidad.</small>
+<button onclick='addToCart({"id": 20, "name": "Maxeo de armas", "variant": "5 al 7", "price": 850})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="maxeo de armas 6 al 7 free fire">
+<div class="art">🔫</div><span>Free Fire</span><h3>Maxeo de armas</h3>
+<p>6 al 7</p><strong>$700</strong><small>Sujeto a revisión y disponibilidad.</small>
+<button onclick='addToCart({"id": 21, "name": "Maxeo de armas", "variant": "6 al 7", "price": 700})'>Agregar</button></article><article class="product" data-category="Free Fire" data-search="maxeo de armas 7 al 8 free fire">
+<div class="art">🔫</div><span>Free Fire</span><h3>Maxeo de armas</h3>
+<p>7 al 8</p><strong>$650</strong><small>Sujeto a revisión y disponibilidad.</small>
+<button onclick='addToCart({"id": 22, "name": "Maxeo de armas", "variant": "7 al 8", "price": 650})'>Agregar</button></article><article class="product" data-category="Robux" data-search="robux por código 329 robux robux">
+<div class="art">🎮</div><span>Robux</span><h3>Robux por código</h3>
+<p>329 Robux</p><strong>$110</strong><small>Solo para México.</small>
+<button onclick='addToCart({"id": 23, "name": "Robux por código", "variant": "329 Robux", "price": 110})'>Agregar</button></article><article class="product" data-category="Robux" data-search="robux por código 800 robux robux">
+<div class="art">🎮</div><span>Robux</span><h3>Robux por código</h3>
+<p>800 Robux</p><strong>$200</strong><small>Solo para México.</small>
+<button onclick='addToCart({"id": 24, "name": "Robux por código", "variant": "800 Robux", "price": 200})'>Agregar</button></article><article class="product" data-category="Robux" data-search="robux por código 1,000 robux robux">
+<div class="art">🎮</div><span>Robux</span><h3>Robux por código</h3>
+<p>1,000 Robux</p><strong>$260</strong><small>Solo para México.</small>
+<button onclick='addToCart({"id": 25, "name": "Robux por código", "variant": "1,000 Robux", "price": 260})'>Agregar</button></article><article class="product" data-category="Robux" data-search="robux por código 1,600 robux robux">
+<div class="art">🎮</div><span>Robux</span><h3>Robux por código</h3>
+<p>1,600 Robux</p><strong>$390</strong><small>Solo para México.</small>
+<button onclick='addToCart({"id": 26, "name": "Robux por código", "variant": "1,600 Robux", "price": 390})'>Agregar</button></article><article class="product" data-category="Robux" data-search="robux por código 1,900 robux robux">
+<div class="art">🎮</div><span>Robux</span><h3>Robux por código</h3>
+<p>1,900 Robux</p><strong>$430</strong><small>Solo para México.</small>
+<button onclick='addToCart({"id": 27, "name": "Robux por código", "variant": "1,900 Robux", "price": 430})'>Agregar</button></article><article class="product" data-category="Robux" data-search="robux por código 2,400 robux robux">
+<div class="art">🎮</div><span>Robux</span><h3>Robux por código</h3>
+<p>2,400 Robux</p><strong>$630</strong><small>Solo para México.</small>
+<button onclick='addToCart({"id": 28, "name": "Robux por código", "variant": "2,400 Robux", "price": 630})'>Agregar</button></article><article class="product" data-category="Robux" data-search="robux por código 3,800 robux robux">
+<div class="art">🎮</div><span>Robux</span><h3>Robux por código</h3>
+<p>3,800 Robux</p><strong>$980</strong><small>Solo para México.</small>
+<button onclick='addToCart({"id": 29, "name": "Robux por código", "variant": "3,800 Robux", "price": 980})'>Agregar</button></article><article class="product" data-category="Robux" data-search="robux por código 4,000 robux robux">
+<div class="art">🎮</div><span>Robux</span><h3>Robux por código</h3>
+<p>4,000 Robux</p><strong>$1,040</strong><small>Solo para México.</small>
+<button onclick='addToCart({"id": 30, "name": "Robux por código", "variant": "4,000 Robux", "price": 1040})'>Agregar</button></article><article class="product" data-category="Robux" data-search="robux por código 5,000 robux robux">
+<div class="art">🎮</div><span>Robux</span><h3>Robux por código</h3>
+<p>5,000 Robux</p><strong>$1,300</strong><small>Solo para México.</small>
+<button onclick='addToCart({"id": 31, "name": "Robux por código", "variant": "5,000 Robux", "price": 1300})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="netflix completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Netflix</h3>
+<p>Completa</p><strong>$290</strong><small></small>
+<button onclick='addToCart({"id": 32, "name": "Netflix", "variant": "Completa", "price": 290})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="netflix perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Netflix</h3>
+<p>Perfil</p><strong>$70</strong><small></small>
+<button onclick='addToCart({"id": 33, "name": "Netflix", "variant": "Perfil", "price": 70})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="disney premium completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Disney Premium</h3>
+<p>Completa</p><strong>$110</strong><small></small>
+<button onclick='addToCart({"id": 34, "name": "Disney Premium", "variant": "Completa", "price": 110})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="disney premium perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Disney Premium</h3>
+<p>Perfil</p><strong>$40</strong><small></small>
+<button onclick='addToCart({"id": 35, "name": "Disney Premium", "variant": "Perfil", "price": 40})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="max platino completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Max Platino</h3>
+<p>Completa</p><strong>$80</strong><small></small>
+<button onclick='addToCart({"id": 36, "name": "Max Platino", "variant": "Completa", "price": 80})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="max platino perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Max Platino</h3>
+<p>Perfil</p><strong>$40</strong><small></small>
+<button onclick='addToCart({"id": 37, "name": "Max Platino", "variant": "Perfil", "price": 40})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="prime video 1 mes completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Prime Video</h3>
+<p>1 mes completa</p><strong>$80</strong><small></small>
+<button onclick='addToCart({"id": 38, "name": "Prime Video", "variant": "1 mes completa", "price": 80})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="prime video perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Prime Video</h3>
+<p>Perfil</p><strong>$40</strong><small></small>
+<button onclick='addToCart({"id": 39, "name": "Prime Video", "variant": "Perfil", "price": 40})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="paramount completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Paramount</h3>
+<p>Completa</p><strong>$50</strong><small></small>
+<button onclick='addToCart({"id": 40, "name": "Paramount", "variant": "Completa", "price": 50})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="paramount perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Paramount</h3>
+<p>Perfil</p><strong>$30</strong><small></small>
+<button onclick='addToCart({"id": 41, "name": "Paramount", "variant": "Perfil", "price": 30})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="universal plus+ 1 mes completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Universal Plus+</h3>
+<p>1 mes completa</p><strong>$80</strong><small>Se activa con correo y contraseña.</small>
+<button onclick='addToCart({"id": 42, "name": "Universal Plus+", "variant": "1 mes completa", "price": 80})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="universal plus+ perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Universal Plus+</h3>
+<p>Perfil</p><strong>$40</strong><small>Se activa con correo y contraseña.</small>
+<button onclick='addToCart({"id": 43, "name": "Universal Plus+", "variant": "Perfil", "price": 40})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="apple tv 1 mes perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Apple TV</h3>
+<p>1 mes perfil</p><strong>$30</strong><small></small>
+<button onclick='addToCart({"id": 44, "name": "Apple TV", "variant": "1 mes perfil", "price": 30})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="apple tv 1 mes completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Apple TV</h3>
+<p>1 mes completa</p><strong>$60</strong><small></small>
+<button onclick='addToCart({"id": 45, "name": "Apple TV", "variant": "1 mes completa", "price": 60})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="apple tv+ 3 meses completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Apple TV+</h3>
+<p>3 meses completa</p><strong>$90</strong><small></small>
+<button onclick='addToCart({"id": 46, "name": "Apple TV+", "variant": "3 meses completa", "price": 90})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="apple tv+ 3 meses perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Apple TV+</h3>
+<p>3 meses perfil</p><strong>$40</strong><small></small>
+<button onclick='addToCart({"id": 47, "name": "Apple TV+", "variant": "3 meses perfil", "price": 40})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="apple music 4 meses completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Apple Music</h3>
+<p>4 meses completa</p><strong>$150</strong><small></small>
+<button onclick='addToCart({"id": 48, "name": "Apple Music", "variant": "4 meses completa", "price": 150})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="crunchyroll 1 mes completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Crunchyroll</h3>
+<p>1 mes completa</p><strong>$80</strong><small></small>
+<button onclick='addToCart({"id": 49, "name": "Crunchyroll", "variant": "1 mes completa", "price": 80})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="crunchyroll perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Crunchyroll</h3>
+<p>Perfil</p><strong>$30</strong><small></small>
+<button onclick='addToCart({"id": 50, "name": "Crunchyroll", "variant": "Perfil", "price": 30})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="viki perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Viki</h3>
+<p>Perfil</p><strong>$30</strong><small></small>
+<button onclick='addToCart({"id": 51, "name": "Viki", "variant": "Perfil", "price": 30})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="viki rakuten plus 1 mes perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Viki Rakuten Plus</h3>
+<p>1 mes perfil</p><strong>$35</strong><small></small>
+<button onclick='addToCart({"id": 52, "name": "Viki Rakuten Plus", "variant": "1 mes perfil", "price": 35})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="viki rakuten plus 1 mes completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Viki Rakuten Plus</h3>
+<p>1 mes completa</p><strong>$70</strong><small></small>
+<button onclick='addToCart({"id": 53, "name": "Viki Rakuten Plus", "variant": "1 mes completa", "price": 70})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="vix 1 mes perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Vix</h3>
+<p>1 mes perfil</p><strong>$27</strong><small></small>
+<button onclick='addToCart({"id": 54, "name": "Vix", "variant": "1 mes perfil", "price": 27})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="vix 2 meses perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Vix</h3>
+<p>2 meses perfil</p><strong>$45</strong><small></small>
+<button onclick='addToCart({"id": 55, "name": "Vix", "variant": "2 meses perfil", "price": 45})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="vix 3 meses perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Vix</h3>
+<p>3 meses perfil</p><strong>$65</strong><small></small>
+<button onclick='addToCart({"id": 56, "name": "Vix", "variant": "3 meses perfil", "price": 65})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="vix 12 meses perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Vix</h3>
+<p>12 meses perfil</p><strong>$130</strong><small></small>
+<button onclick='addToCart({"id": 57, "name": "Vix", "variant": "12 meses perfil", "price": 130})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="vix con pase mundial 12 meses perfil streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Vix con pase mundial</h3>
+<p>12 meses perfil</p><strong>$130</strong><small>Acceso por código.</small>
+<button onclick='addToCart({"id": 58, "name": "Vix con pase mundial", "variant": "12 meses perfil", "price": 130})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="spotify 1 mes individual streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Spotify</h3>
+<p>1 mes individual</p><strong>$65</strong><small></small>
+<button onclick='addToCart({"id": 59, "name": "Spotify", "variant": "1 mes individual", "price": 65})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="spotify 1 mes invitación streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Spotify</h3>
+<p>1 mes invitación</p><strong>$60</strong><small></small>
+<button onclick='addToCart({"id": 60, "name": "Spotify", "variant": "1 mes invitación", "price": 60})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="spotify 3 meses individual streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Spotify</h3>
+<p>3 meses individual</p><strong>$130</strong><small></small>
+<button onclick='addToCart({"id": 61, "name": "Spotify", "variant": "3 meses individual", "price": 130})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="spotify 1 mes familiar streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Spotify</h3>
+<p>1 mes familiar</p><strong>$239</strong><small>Sobre pedido.</small>
+<button onclick='addToCart({"id": 62, "name": "Spotify", "variant": "1 mes familiar", "price": 239})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="deezer 1 mes individual streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Deezer</h3>
+<p>1 mes individual</p><strong>$50</strong><small></small>
+<button onclick='addToCart({"id": 63, "name": "Deezer", "variant": "1 mes individual", "price": 50})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="tidal 1 mes individual streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Tidal</h3>
+<p>1 mes individual</p><strong>$40</strong><small></small>
+<button onclick='addToCart({"id": 64, "name": "Tidal", "variant": "1 mes individual", "price": 40})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="tidal 1 mes completa streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Tidal</h3>
+<p>1 mes completa</p><strong>$80</strong><small></small>
+<button onclick='addToCart({"id": 65, "name": "Tidal", "variant": "1 mes completa", "price": 80})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="amazon music individual streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Amazon Music</h3>
+<p>Individual</p><strong>$70</strong><small></small>
+<button onclick='addToCart({"id": 66, "name": "Amazon Music", "variant": "Individual", "price": 70})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="amazon music familiar streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>Amazon Music</h3>
+<p>Familiar</p><strong>$90</strong><small></small>
+<button onclick='addToCart({"id": 67, "name": "Amazon Music", "variant": "Familiar", "price": 90})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="youtube familiar streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>YouTube</h3>
+<p>Familiar</p><strong>$70</strong><small>Se requiere correo nuevo y contraseña.</small>
+<button onclick='addToCart({"id": 68, "name": "YouTube", "variant": "Familiar", "price": 70})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="youtube individual streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>YouTube</h3>
+<p>Individual</p><strong>$50</strong><small>Se requiere correo nuevo y contraseña.</small>
+<button onclick='addToCart({"id": 69, "name": "YouTube", "variant": "Individual", "price": 50})'>Agregar</button></article><article class="product" data-category="Streaming" data-search="youtube invitación streaming">
+<div class="art">🎬</div><span>Streaming</span><h3>YouTube</h3>
+<p>Invitación</p><strong>$35</strong><small>Se requiere correo nuevo y contraseña.</small>
+<button onclick='addToCart({"id": 70, "name": "YouTube", "variant": "Invitación", "price": 35})'>Agregar</button></article><article class="product" data-category="Apps Android" data-search="duolingo acceso apps android">
+<div class="art">📱</div><span>Apps Android</span><h3>Duolingo</h3>
+<p>Acceso</p><strong>$30</strong><small>Solo para Android.</small>
+<button onclick='addToCart({"id": 71, "name": "Duolingo", "variant": "Acceso", "price": 30})'>Agregar</button></article><article class="product" data-category="Apps Android" data-search="picsart acceso apps android">
+<div class="art">📱</div><span>Apps Android</span><h3>PicsArt</h3>
+<p>Acceso</p><strong>$30</strong><small>Solo para Android.</small>
+<button onclick='addToCart({"id": 72, "name": "PicsArt", "variant": "Acceso", "price": 30})'>Agregar</button></article><article class="product" data-category="Apps Android" data-search="remini acceso apps android">
+<div class="art">📱</div><span>Apps Android</span><h3>Remini</h3>
+<p>Acceso</p><strong>$30</strong><small>Solo para Android.</small>
+<button onclick='addToCart({"id": 73, "name": "Remini", "variant": "Acceso", "price": 30})'>Agregar</button></article><article class="product" data-category="Apps Android" data-search="b612 acceso apps android">
+<div class="art">📱</div><span>Apps Android</span><h3>B612</h3>
+<p>Acceso</p><strong>$30</strong><small>Solo para Android.</small>
+<button onclick='addToCart({"id": 74, "name": "B612", "variant": "Acceso", "price": 30})'>Agregar</button></article><article class="product" data-category="Apps Android" data-search="adobe photoshop express acceso apps android">
+<div class="art">📱</div><span>Apps Android</span><h3>Adobe Photoshop Express</h3>
+<p>Acceso</p><strong>$30</strong><small>Solo para Android.</small>
+<button onclick='addToCart({"id": 75, "name": "Adobe Photoshop Express", "variant": "Acceso", "price": 30})'>Agregar</button></article><article class="product" data-category="Apps Android" data-search="photoroom acceso apps android">
+<div class="art">📱</div><span>Apps Android</span><h3>Photoroom</h3>
+<p>Acceso</p><strong>$30</strong><small>Solo para Android.</small>
+<button onclick='addToCart({"id": 76, "name": "Photoroom", "variant": "Acceso", "price": 30})'>Agregar</button></article><article class="product" data-category="Apps Android" data-search="lightroom acceso apps android">
+<div class="art">📱</div><span>Apps Android</span><h3>Lightroom</h3>
+<p>Acceso</p><strong>$30</strong><small>Solo para Android.</small>
+<button onclick='addToCart({"id": 77, "name": "Lightroom", "variant": "Acceso", "price": 30})'>Agregar</button></article><article class="product" data-category="Apps Android" data-search="inshot acceso apps android">
+<div class="art">📱</div><span>Apps Android</span><h3>InShot</h3>
+<p>Acceso</p><strong>$30</strong><small>Solo para Android.</small>
+<button onclick='addToCart({"id": 78, "name": "InShot", "variant": "Acceso", "price": 30})'>Agregar</button></article><article class="product" data-category="Apps Android" data-search="libros pdf 1 libro apps android">
+<div class="art">📚</div><span>Apps Android</span><h3>Libros PDF</h3>
+<p>1 libro</p><strong>$20</strong><small>Solo para Android.</small>
+<button onclick='addToCart({"id": 79, "name": "Libros PDF", "variant": "1 libro", "price": 20})'>Agregar</button></article><article class="product" data-category="Apps Android" data-search="libros pdf paquete de 3 apps android">
+<div class="art">📚</div><span>Apps Android</span><h3>Libros PDF</h3>
+<p>Paquete de 3</p><strong>$50</strong><small>Solo para Android.</small>
+<button onclick='addToCart({"id": 80, "name": "Libros PDF", "variant": "Paquete de 3", "price": 50})'>Agregar</button></article><article class="product" data-category="Diseño y productividad" data-search="canva 1 mes diseño y productividad">
+<div class="art">🎨</div><span>Diseño y productividad</span><h3>Canva</h3>
+<p>1 mes</p><strong>$30</strong><small></small>
+<button onclick='addToCart({"id": 81, "name": "Canva", "variant": "1 mes", "price": 30})'>Agregar</button></article><article class="product" data-category="Diseño y productividad" data-search="canva 2 meses diseño y productividad">
+<div class="art">🎨</div><span>Diseño y productividad</span><h3>Canva</h3>
+<p>2 meses</p><strong>$50</strong><small></small>
+<button onclick='addToCart({"id": 82, "name": "Canva", "variant": "2 meses", "price": 50})'>Agregar</button></article><article class="product" data-category="Diseño y productividad" data-search="canva 4 meses diseño y productividad">
+<div class="art">🎨</div><span>Diseño y productividad</span><h3>Canva</h3>
+<p>4 meses</p><strong>$70</strong><small></small>
+<button onclick='addToCart({"id": 83, "name": "Canva", "variant": "4 meses", "price": 70})'>Agregar</button></article><article class="product" data-category="Diseño y productividad" data-search="canva 6 meses diseño y productividad">
+<div class="art">🎨</div><span>Diseño y productividad</span><h3>Canva</h3>
+<p>6 meses</p><strong>$80</strong><small></small>
+<button onclick='addToCart({"id": 84, "name": "Canva", "variant": "6 meses", "price": 80})'>Agregar</button></article><article class="product" data-category="Diseño y productividad" data-search="canva anual diseño y productividad">
+<div class="art">🎨</div><span>Diseño y productividad</span><h3>Canva</h3>
+<p>Anual</p><strong>$130</strong><small></small>
+<button onclick='addToCart({"id": 85, "name": "Canva", "variant": "Anual", "price": 130})'>Agregar</button></article><article class="product" data-category="Diseño y productividad" data-search="canva pro 1 mes diseño y productividad">
+<div class="art">🎨</div><span>Diseño y productividad</span><h3>Canva</h3>
+<p>Pro 1 mes</p><strong>$70</strong><small></small>
+<button onclick='addToCart({"id": 86, "name": "Canva", "variant": "Pro 1 mes", "price": 70})'>Agregar</button></article><article class="product" data-category="Diseño y productividad" data-search="chatgpt compartido 1 mes diseño y productividad">
+<div class="art">✨</div><span>Diseño y productividad</span><h3>ChatGPT compartido</h3>
+<p>1 mes</p><strong>$90</strong><small>Cuenta compartida.</small>
+<button onclick='addToCart({"id": 87, "name": "ChatGPT compartido", "variant": "1 mes", "price": 90})'>Agregar</button></article><article class="product" data-category="Juegos" data-search="minecraft para android licencia juegos">
+<div class="art">⛏️</div><span>Juegos</span><h3>Minecraft para Android</h3>
+<p>Licencia</p><strong>$50</strong><small>No es APK.</small>
+<button onclick='addToCart({"id": 88, "name": "Minecraft para Android", "variant": "Licencia", "price": 50})'>Agregar</button></article></div></section></main>
+<button class="cart-fab" onclick="openCart()">🛍️ Carrito: <span id="countFab">0</span></button>
+<div id="drawer" class="drawer" onclick="backdrop(event)"><aside class="panel"><div class="head"><h2>Tu pedido</h2><button onclick="closeCart()">✕</button></div><div id="items"></div><div class="total"><span>Total</span><span id="total">$0</span></div><div class="field"><label>Tu nombre</label><input id="name" placeholder="Escribe tu nombre"></div><br><button class="primary" style="width:100%" onclick="checkout()">Enviar por WhatsApp</button></aside></div>
+<footer>© 2026 LALA SHOP</footer>
+<script>
+const WHATSAPP='52285102477';let cart=JSON.parse(localStorage.getItem('lala_cart')||'[]');
+function save(){localStorage.setItem('lala_cart',JSON.stringify(cart));render()}function addToCart(p){let x=cart.find(i=>i.id===p.id);x?x.qty++:cart.push({...p,qty:1});save();openCart()}function qty(id,d){let x=cart.find(i=>i.id===id);if(!x)return;x.qty+=d;if(x.qty<=0)cart=cart.filter(i=>i.id!==id);save()}function money(v){return '$'+Number(v).toLocaleString('es-MX')}function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}function render(){let c=cart.reduce((s,x)=>s+x.qty,0),t=cart.reduce((s,x)=>s+x.price*x.qty,0);countTop.textContent=c;countFab.textContent=c;total.textContent=money(t);items.innerHTML=cart.length?cart.map(x=>`<div class="item"><div><b>${esc(x.name)}</b><br><small>${esc(x.variant)} · ${money(x.price)}</small></div><div class="qty"><button onclick="qty(${x.id},-1)">−</button><b>${x.qty}</b><button onclick="qty(${x.id},1)">+</button></div></div>`).join(''):'<p>Tu carrito está vacío.</p>'}function openCart(){drawer.classList.add('open')}function closeCart(){drawer.classList.remove('open')}function backdrop(e){if(e.target.id==='drawer')closeCart()}function checkout(){let n=name.value.trim();if(!cart.length)return alert('Agrega al menos un producto.');if(!n)return alert('Escribe tu nombre.');let t=cart.reduce((s,x)=>s+x.price*x.qty,0),lines=cart.map(x=>`• ${x.name} - ${x.variant} x${x.qty}: ${money(x.price*x.qty)}`),msg=`Hola, quiero hacer un pedido en LALA SHOP 💗\n\nNombre: ${n}\n\n${lines.join('\n')}\n\nTotal: ${money(t)}`;window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`,'_blank')}
+document.querySelectorAll('.filter').forEach(b=>b.onclick=()=>{document.querySelectorAll('.filter').forEach(x=>x.classList.remove('active'));b.classList.add('active');filter()});search.oninput=filter;function filter(){let q=search.value.toLowerCase(),cat=document.querySelector('.filter.active').dataset.category;document.querySelectorAll('.product').forEach(c=>c.style.display=((cat==='Todos'||c.dataset.category===cat)&&c.dataset.search.includes(q))?'flex':'none')}render();
+</script></body></html>
